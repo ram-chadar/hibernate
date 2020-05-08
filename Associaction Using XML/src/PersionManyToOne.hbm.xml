@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 4, 2020 2:17:28 AM by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="associaction" name="com.ram.model.PersionManyToOne" table="persion_many_to_one">
+        <id name="pid" type="int">
+            <column name="pid"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="int" unique="false">
+            <column name="age" not-null="true"/>
+        </property>
+        
+        
+        <many-to-one name="address" 
+        column="aid"
+        not-null="true"/>
+        
+    </class>
+    
+    <class catalog="associaction" name="com.ram.model.AddressManyToOne" table="address_many_to_one">
+        <id name="aid" type="int">
+            <column name="aid"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="city" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="city" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="dist" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="dist" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="state" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="state" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
